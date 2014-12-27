@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="zh" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="zh" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="zh"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.full_title %}{{ page.full_title }}{% else %}{% if page.title %}{{ page.title }}-{% endif %}{{ site.title }}{% endif %}</title>
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    {% stylesheet application %}
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?25e0d0d77a46bdb53a1afa9d25acb6ef";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  </head> 
+  <body class="header-fixed">
+    <div class="wrapper">
+      <div class="header">
+        <div class="topbar">
+          <div class="container">
+            <ul class="loginbar pull-right"><li><i class="fa fa-phone"></i>业务联系：13790019668（黄生）</li></ul>
+          </div>
+        </div>
+        <div class="navbar navbar-default" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">导航</span>
+                <span class="fa fa-bars"></span>
+              </button>
+              <a class="navbar-brand" href="{{ site.url }}"><img id="logo-header" src="/images/assets/selectweb-logo.png" alt="Select Web Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+              <ul class="nav navbar-nav">
+                <li class="{% if page.category == 'home' %}active{% endif %}"><a href="{{ site.url }}">首页</a></li>
+                <li class="{% if page.category == 'seo' %}dropdown active{% elsif page.category == 'home' or page.category == 'ec' or page.category == 'web' or page.category == 'domain' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">SEO</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/seo-theory/">SEO理论</a></li>
+                    <li><a href="{{ site.url }}/seo-practice/">SEO实践</a></li>
+                    <li><a href="{{ site.url }}/google/">Google</a></li>
+                    <li><a href="{{ site.url }}/baidu/">百度</a></li>
+                  </ul>
+                </li>
+                <li class="{% if page.category == 'ec' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'web' or page.category == 'domain' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">电子商务</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/e-marketing/">网络营销</a></li>
+                    <li><a href="{{ site.url }}/case-analysis/">案例分析</a></li>
+                    <li><a href="{{ site.url }}/professional-ethics/">职业与道德</a></li>
+                  </ul>
+                </li>
+                <li class="{% if page.category == 'web' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'domain' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Web技术</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/html/">HTML语言</a></li>
+                    <li><a href="{{ site.url }}/ueo/">用户体验优化</a></li>
+                    <li><a href="{{ site.url }}/database/">数据库</a></li>
+                  </ul>
+                </li>
+                <li class="{% if page.category == 'domain' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'web' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">域名</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/gtld/">国际域名</a></li>
+                    <li><a href="{{ site.url }}/ntld/">国别域名</a></li>
+                    <li><a href="{{ site.url }}/domain-knowledge/">域名知识</a></li>
+                    <li><a href="{{ site.url }}/domain-registrar/">域名注册商</a></li>
+                  </ul>
+                </li>
+                <li class="{% if page.category == 'host' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'web' or page.category == 'domain' or page.category == 'about' %}dropdown{% endif %}">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">网站主机</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/linode/">Linode</a></li>
+                    <li><a href="{{ site.url }}/bluehost/">Bluehost</a></li>
+                  </ul>
+                </li>
+                <li class="{% if page.category == 'about' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'web' or page.category == 'domain' or page.category == 'host' %}dropdown{% endif %}">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">关于我</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/about/">博主简介</a></li>
+                    <li><a href="http://osw.cc" target="_blank">开源网络</a></li>
+                    <li><a href="http://osw.im" target="_blank">开源设计</a></li>
+                  </ul>
+                </li>                    
+                <li class="dropdown">
+                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">常用设置</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="{{ site.url }}/linode/linode-setting.html">Linode设置</a></li>
+                  </ul>
+                </li>   
+              </ul>
+            </div>
+          </div>    
+        </div>            
+      </div>
+      {{ content }}
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 md-margin-bottom-40">
+              <div class="headline"><h2>博主简介</h2></div>  
+              <p class="margin-bottom-25 md-margin-bottom-40">Zack Wong，Select Web博主，开源网络创始人，国家第八期SEO工程师，广东省电子商务助理师，顺德职业技术学院电子商务专业客座讲师，广东安能保险柜制造有限公司网络营销顾问。</p></p>    
+            </div>         
+            <div class="col-md-3 md-margin-bottom-40">
+              <div class="headline"><a href="http://osw.cc" target="_blank"><h2>开源网络</h2></a></div> 
+              <p class="margin-bottom-25 md-margin-bottom-40">开源网络是一家根据顺德地区企业自身实际情况，引导客户对自身网站定位，加强网站作为企业网络形象的效果，提高网站UEO和SEO的网络服务商。主要提供网站建设、网络营销顾问、搜索引擎优化(SEO)及网站托管服务。</p>
+            </div>
+            <div class="col-md-3 md-margin-bottom-40">
+              <div class="headline"><a href="http://osw.im" target="_blank"><h2>开源设计</h2></a></div> 
+              <p class="margin-bottom-25 md-margin-bottom-40">开源设计隶属开源网络，是一家主要为顺德地区企业提供产品画册、招商手册、包装纸箱、名片等一系列传统广告制作设计整合服务商，同时也提供适合移动互联网需求的企业电子画册与招商电子手册制作设计服务。</p>
+            </div>
+            <div class="col-md-3">
+              <div class="headline"><h2>联系方式</h2></div> 
+              <p class="margin-bottom-25 md-margin-bottom-40">业务咨询：黄生<br>联系电话：13790019668<br>QQ：<a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=a808d3d4d5343e8be159b10f27485cb3e43f70d941b419e0"><img border="0"  src="http://wpa.qq.com/imgd?IDKEY=a808d3d4d5343e8be159b10f27485cb3e43f70d941b419e0&pic=42" alt="博主QQ" title="博主QQ"/></a><br>邮箱：zack@gdky.net<br></p>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <p style="text-align:center">Copyright © 2011-2015 <a href="{{ site.url }}/about/">Zack</a> 保留所有权利 | <a href="{{ site.url }}/Sitemap.xml">Sitemap</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--[if lt IE 9]> 
+    <div id="ie-alert-panel" role="alert" class="navbar-fixed-bottom alert alert-danger">
+        <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4>天啊！你的浏览器版本太旧了！</h4>
+        <p class="text-warning">您当前使用的浏览器版本过低,为了有更好的浏览体验</p>
+        <p>请使用<span class="text-info">火狐浏览器</span>或者<span class="text-info">谷歌浏览器</span>.</p>
+        <p>如果你是使用IE浏览器请升级到<span class="text-info">IE8以上</span>.</p>
+        <p>如果你使用的是<span class="text-info">360浏览器、遨游浏览器、猎豹浏览器</span>请使用<span class="text-info">极速模式</span>浏览</p>
+        <button data-dismiss="alert" class="btn btn-default pull-right" type="button">关闭</button>
+    </div>
+  <![endif]-->
+  {% javascript application %}
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      App.init();
+    });
+  </script>
+  <!--[if lt IE 9]>
+    <script src="/assets/respond.js"></script>
+    <script src="/assets/html5shiv.js"></script>
+  <![endif]-->
+  </body>
+</html>

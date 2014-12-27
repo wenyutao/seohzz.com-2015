@@ -1,0 +1,38 @@
+---
+layout: article
+permalink: /html/web-url.html
+category: web
+type-en: html
+image: html
+title: 绝对路径与相对路径的理解
+keywords: HTML语言
+description: 本文用图文并茂的方法介绍HTML中的相对路径和绝对路径，让用户更容易理解和掌握绝对路径和相对路径的写法。
+---
+<p>绝对路径是指包含域名的完完整整的网址。相对路径顾名思义就是相对于绝对路径而言，是当前网页的相对网址。</p>
+<p><b>①绝对路径的表示方法：</b></p>
+<p>假设在文件夹&ldquo;网络营销&rdquo;里面有两个文件夹和三个文件，分别是文件夹&ldquo;SEO&rdquo;、网页A.html、网页B.html和图片C.jpg。如下图所示：</p>
+<p align="center"><img class="img-responsive" alt="绝对路径图解" src="{{ site.url }}/images/article-picture/web-url-01.jpg"></p>
+<p>网页A.html的绝对路径就是：根目录/电子商务/网络营销/网页A.html</p>
+<p>网页B.html的绝对路径就是：根目录/电子商务/网络营销/网页B.html</p>
+<p>图片C.html的绝对路径就是：根目录/电子商务/网络营销/图片C.jpg</p>
+<p><b>②相对路径的表示方法：</b></p>
+<p>（1）假设你正在编辑网页A，网页A就是一个参考物，如下图所示：</p>
+<p align="center"><img class="img-responsive" alt="同级目录相对路径图解" src="{{ site.url }}/images/article-picture/web-url-02.jpg"></p>
+<p>网页B.html的相对路径就是：网页B.html</p>
+<p>图片C.jpg的相对路径就是：图片C.jpg</p>
+<p>（2）假设网页D.html的绝对路径是：根目录/电子商务/网络营销/SEO/网页D.html，如下图：</p>
+<p align="center"><img class="img-responsive" alt="下级目录相对路径图解" src="{{ site.url }}/images/article-picture/web-url-03.jpg"></p>
+<p>相对于网页A.html来说，网页D.html的相对路径就是：SEO/网页D.html</p>
+<p>网页F.html的绝对路径是：根目录/电子商务/网络营销/SEO/网站结构/网页F.html，如下图：</p>
+<p align="center"><img class="img-responsive" alt="下下级目录相对路径图解" src="{{ site.url }}/images/article-picture/web-url-04.jpg"></p>
+<p>相对于网页A.html来说，网页F.html的相对路径就是：网络营销/SEO/网站结构/网页F.html</p>
+<p>再下级目录的文件相对路径的表示方法如此类推。</p>
+<p>（3）假设网页G.html的绝对路径是：根目录/电子商务/网页G.html，如下图：</p>
+<p align="center"><img class="img-responsive" alt="上级目录相对路径图解" src="{{ site.url }}/images/article-picture/web-url-05.jpg"></p>
+<p>相对于网页A.html来说，网页G.html的相对路径就是：../网页G.html（..表示返回上一级目录）</p>
+<p>网页H.html的绝对路径是：根目录/网页H.html，如下图：</p>
+<p align="center"><img class="img-responsive" alt="上上级目录相对路径图解" src="{{ site.url }}/images/article-picture/web-url-06.jpg"></p>
+<p>相对于网页A.html来说，网页H.html的相对路径就是：../../网页H.html（..表示返回上一级目录）</p>
+<p>注意：</p>
+<p>1、在编辑绝对路径和相对路径的时候，请务必把输入切换到英文输入法状态。</p>
+<p>2、上文法则所提到的文件名是指完整的文件名，格式是文件名+文件类型后缀，如图片C.jpg。</p>

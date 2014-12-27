@@ -1,0 +1,28 @@
+url: http://www.sangeri.com
+
+title: Select Web
+
+keywords: 顺德SEO,顺德网站建设,顺德网站推广,顺德网络营销
+
+description: Select Web是分享顺德SEO、网站建设、网站推广和网络营销的博客，为企业提供专业的SEO、网站建设、网站推广和网络营销顾问服务。
+
+permalink: /products/:title.html
+
+relative_permalinks: false
+
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - js
+    - css
+  js_compressor: uglifier
+  css_compressor: sass
+  cache: true
+  cache_assets: true
+  gzip: []
+
+exclude:
+  - README.md
+  - js
+  - css
