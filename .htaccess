@@ -1,0 +1,13 @@
+# turn on redirection
+RewriteEngine on
+
+# non-www redirects to www
+RewriteCond %{http_host} ^osw.so [nc]
+RewriteRule ^(.*)$ http://www.osw.so/$1 [L,R=301]
+
+# redirect index.html to its folder
+RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteRule ^(.*)index.html$ http://www.osw.so/$1 [R=301,L]
+
+# remove useless header
+Header unset X-UA-Compatible
