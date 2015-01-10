@@ -1,0 +1,108 @@
+---
+layout: article
+permalink: /linode/ubuntu-pptp-setup.html
+category: host
+type-en: linode
+image: linode
+title: Ubuntu安装pptp
+keywords: Linode
+description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手机等所有上网设备通过VPN使用及访问互联网。
+---
+<p>系统环境：Ubuntu</p>
+<p>1、安装pptpd</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo apt-get install pptpd</p>
+</div>
+<p>2、编辑/etc/pptpd.conf</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo nano /etc/pptpd.conf</p>
+  <p>注释或删除localip和remoteip选项（Zack推荐采用注释方法）</p>
+  <p>#</p>
+  <p>localip 192.168.0.1</p>
+  <p>remoteip 192.168.0.234-238,192.168.0.245</p>
+</div>
+<p>3、编辑/etc/ppp/pptpd-options</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo nano /etc/ppp/pptpd-options</p>
+  <p>在代码最后粘贴以下代码</p>
+  <p>name pptpd</p>
+  <p>refuse-pap</p>
+  <p>refuse-chap</p>
+  <p>refuse-mschap</p>
+  <p>require-mschap-v2</p>
+  <p>require-mppe-128</p>
+  <p>proxyarp</p>
+  <p>lock</p>
+  <p>nobsdcomp</p>
+  <p>novj</p>
+  <p>novjccomp</p>
+  <p>nologfd</p>
+  <p>ms-dns 8.8.8.8</p>
+  <p>ms-dns 8.8.4.4</p>
+</div>
+<p>4、编辑/etc/ppp/chap-secrets</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo nano /etc/ppp/chap-secrets</p>
+  <p>输入用户名及密码，格式如下：</p>
+  <p>用户名 pptpd 密码 *</p>
+</div>
+<p>5、重启pptpd</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo service pptpd restart</p>
+</div>
+<p>6、编辑/etc/sysctl.conf</p>
+<div class="tag-box tag-box-v2">
+  <p>注释或删除以下代码（Zack推荐采用注释方法）</p>
+  <p>net.ipv4.ip_forward=1</p>
+  <p>保存并运行程序</p>
+  <p>sudo sysctl -p</p>
+</div>
+<p>7、最后添加iptables规则</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo nano /etc/iptables.firewall.rules</p>
+  <p>粘贴以下代码并保存</p>
+    <p>*filter</p>
+  <br>
+  <p>#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn't use lo0</p>
+  <p>-A INPUT -i lo -j ACCEPT</p>
+  <p>-A INPUT -d 127.0.0.0/8 -j REJECT</p>
+  <br>
+  <p>#  Accept all established inbound connections</p>
+  <p>-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</p>
+  <br>
+  <p>#  Allow all outbound traffic - you can modify this to only allow certain traffic</p>
+  <p>-A OUTPUT -j ACCEPT</p>
+  <br>
+  <p>#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).</p>
+  <p>-A INPUT -p tcp --dport 80 -j ACCEPT</p>
+  <p>-A INPUT -p tcp --dport 443 -j ACCEPT</p>
+  <br>
+  <p># VPN PPTPD</p>
+  <p>-A INPUT -p tcp --dport 1723 -j ACCEPT</p>
+  <p>-A INPUT -p 47 -j ACCEPT</p>
+  <br>
+  <p>#  Allow SSH connections</p>
+  <p>#</p>
+  <p>#  The -dport number should be the same port number you set in sshd_config</p>
+  <p>#</p>
+  <p>-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT</p>
+  <br>
+  <p>#  Allow ping</p>
+  <p>-A INPUT -p icmp -j ACCEPT</p>
+  <br>
+  <p>#  Log iptables denied calls</p>
+  <p>-A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7</p>
+  <br>
+  <p>#  Drop all other inbound - default deny unless explicitly allowed policy</p>
+  <p>-A INPUT -j DROP</p>
+  <p># -A FORWARD -j DROP</p>
+  <br>
+  <p>COMMIT</p>
+  <br>
+  <p>*nat</p>
+  <br>
+  <p># VPN PPTPD</p>
+  <p>-A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE</p>
+  <br>
+  <p>COMMIT</p>
+</div>
