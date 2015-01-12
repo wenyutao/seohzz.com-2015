@@ -119,7 +119,7 @@ description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手
   <br>
   <p>COMMIT</p>
 </div>
-<p>执行iptables规则</p>
+<p>执行iptables规则（每次重启Ubuntu需重新执行）</p>
 <div class="tag-box tag-box-v2">
   <p>iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE</p>
 </div>
