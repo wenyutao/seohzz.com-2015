@@ -17,9 +17,9 @@ description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手
 <div class="tag-box tag-box-v2">
   <p>sudo nano /etc/pptpd.conf</p>
 </div>
-<p>注释或删除localip和remoteip选项（Zack推荐采用注释方法）</p>
+<p>删除localip和remoteip选项前的＃，修改后如下：</p>
 <div class="tag-box tag-box-v2">
-  <p>#</p>
+  <p># (Recommended)</p>
   <p>localip 192.168.0.1</p>
   <p>remoteip 192.168.0.234-238,192.168.0.245</p>
 </div>
@@ -59,12 +59,8 @@ description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手
 <p>编辑/etc/sysctl.conf</p>
 <div class="tag-box tag-box-v2">
   <p>sudo nano /etc/sysctl.conf</p>
-  <p></p>
-  <p></p>
-  <p>保存并运行程序</p>
-  <p>sudo sysctl -p</p>
 </div>
-<p>注释或删除以下代码（Zack推荐采用注释方法）</p>
+<p>删除以下代码前面的＃</p>
 <div class="tag-box tag-box-v2">
   <p>net.ipv4.ip_forward=1</p>
 </div>
@@ -122,4 +118,8 @@ description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手
   <p>-A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE</p>
   <br>
   <p>COMMIT</p>
+</div>
+<p>执行iptables规则</p>
+<div class="tag-box tag-box-v2">
+  <p>iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE</p>
 </div>
