@@ -25,7 +25,11 @@ description: 基于Ubuntu系统的Linode VPS设置，详细列出系统更新及
 <div class="tag-box tag-box-v2">
   <p>安装：apt-get install git</p>
 </div>
-<p>4、安装rvm（用于管理ruby）及最新版ruby</p>
+<p>4、curl</p>
+<div class="tag-box tag-box-v2">
+  <p>安装：apt-get install curl</p>
+</div>
+<p>5、安装rvm（用于管理ruby）及最新版ruby</p>
 <div class="tag-box tag-box-v2">
   <p>\curl -L https://get.rvm.io | bash -s stable --ruby</p>
   <p>启动：source /usr/local/rvm/scripts/rvm</p>
@@ -34,7 +38,7 @@ description: 基于Ubuntu系统的Linode VPS设置，详细列出系统更新及
   <p>安装2.0.0[-p481]：rvm install 2.0.0-p481</p>
   <p>设置ruby默认版本：rvm --default use 2.0.0-p481</p>
 </div>
-<p>5、Jekyll及相关软件</p>
+<p>6、Jekyll及相关软件</p>
 <div class="tag-box tag-box-v2">
   <p>git clone git://github.com/qnn/qnnsafe.com-v1.git</p>
   <p>cd qnnsafe.com-v1</p>
@@ -42,7 +46,7 @@ description: 基于Ubuntu系统的Linode VPS设置，详细列出系统更新及
   <p>gem install -V jekyll ruby-nuggets rdiscount coffee-script therubyracer uglifier sass jekyll-assets haml unicode_utils html2haml rubygems</p>
   <p>gem install rails</p>
 </div>
-<p>6、安装zip及使用</p>
+<p>7、安装zip及使用</p>
 <div class="tag-box tag-box-v2">
   <p>安装：apt-get install zip</p>
   <p>压缩当前文件夹：zip -r ./压缩包名称.zip ./*</p>
