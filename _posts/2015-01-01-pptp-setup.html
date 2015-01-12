@@ -9,22 +9,26 @@ keywords: Linode
 description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手机等所有上网设备通过VPN使用及访问互联网。
 ---
 <p>系统环境：Ubuntu</p>
-<p>1、安装pptpd</p>
+<p>安装pptpd</p>
 <div class="tag-box tag-box-v2">
   <p>sudo apt-get install pptpd</p>
 </div>
-<p>2、编辑/etc/pptpd.conf</p>
+<p>编辑/etc/pptpd.conf</p>
 <div class="tag-box tag-box-v2">
   <p>sudo nano /etc/pptpd.conf</p>
-  <p>注释或删除localip和remoteip选项（Zack推荐采用注释方法）</p>
+</div>
+<p>注释或删除localip和remoteip选项（Zack推荐采用注释方法）</p>
+<div class="tag-box tag-box-v2">
   <p>#</p>
   <p>localip 192.168.0.1</p>
   <p>remoteip 192.168.0.234-238,192.168.0.245</p>
 </div>
-<p>3、编辑/etc/ppp/pptpd-options</p>
+<p>编辑/etc/ppp/pptpd-options</p>
 <div class="tag-box tag-box-v2">
-  <p>sudo nano /etc/ppp/pptpd-options</p>
-  <p>在代码最后粘贴以下代码</p>
+  <p>sudo nano /etc/ppp/pptpd-options</p>  
+</div>
+<p>在代码最后粘贴以下代码</p>
+<div class="tag-box tag-box-v2">
   <p>name pptpd</p>
   <p>refuse-pap</p>
   <p>refuse-chap</p>
@@ -40,28 +44,41 @@ description: 基于Ubuntu系统的Linode安装PPTP，实现电脑、平板、手
   <p>ms-dns 8.8.8.8</p>
   <p>ms-dns 8.8.4.4</p>
 </div>
-<p>4、编辑/etc/ppp/chap-secrets</p>
+<p>编辑/etc/ppp/chap-secrets</p>
 <div class="tag-box tag-box-v2">
   <p>sudo nano /etc/ppp/chap-secrets</p>
-  <p>输入用户名及密码，格式如下：</p>
+</div>
+<p>输入用户名及密码，格式如下：</p>
+<div class="tag-box tag-box-v2">
   <p>用户名 pptpd 密码 *</p>
 </div>
-<p>5、重启pptpd</p>
+<p>重启pptpd</p>
 <div class="tag-box tag-box-v2">
   <p>sudo service pptpd restart</p>
 </div>
-<p>6、编辑/etc/sysctl.conf</p>
+<p>编辑/etc/sysctl.conf</p>
 <div class="tag-box tag-box-v2">
-  <p>注释或删除以下代码（Zack推荐采用注释方法）</p>
-  <p>net.ipv4.ip_forward=1</p>
+  <p>sudo nano /etc/sysctl.conf</p>
+  <p></p>
+  <p></p>
   <p>保存并运行程序</p>
   <p>sudo sysctl -p</p>
 </div>
-<p>7、最后添加iptables规则</p>
+<p>注释或删除以下代码（Zack推荐采用注释方法）</p>
+<div class="tag-box tag-box-v2">
+  <p>net.ipv4.ip_forward=1</p>
+</div>
+<p>保存并运行程序</p>
+<div class="tag-box tag-box-v2">
+  <p>sudo sysctl -p</p>
+</div>
+<p>添加iptables规则</p>
 <div class="tag-box tag-box-v2">
   <p>sudo nano /etc/iptables.firewall.rules</p>
-  <p>粘贴以下代码并保存</p>
-    <p>*filter</p>
+</div>
+<p>粘贴以下代码并保存</p>
+<div class="tag-box tag-box-v2">
+  <p>*filter</p>
   <br>
   <p>#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn't use lo0</p>
   <p>-A INPUT -i lo -j ACCEPT</p>
