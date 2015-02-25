@@ -2,6 +2,7 @@
  *= require bootstrap.css
  *= require style.css
  *= require jquery.fancybox.css
+ *= require jquery.fancybox-buttons.css
  *= require font-awesome.css
  *= require blog.css
  *= require error.css

@@ -2,5 +2,6 @@
 //= require jquery-migrate-1.2.1.min.js
 //= require bootstrap.js
 //= require jquery.fancybox.pack.js
+//= require jquery.fancybox-buttons.js
 //= require back-to-top.js
 //= require app.js
