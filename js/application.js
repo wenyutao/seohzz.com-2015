@@ -3,3 +3,4 @@
 //= require bootstrap.js
 //= require back-to-top.js
 //= require app.js
+//= require jquery.fancybox.pack.js
