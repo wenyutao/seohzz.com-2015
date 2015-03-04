@@ -31,7 +31,8 @@ description: 基于Ubuntu系统的Linode VPS设置，详细列出系统更新及
 </div>
 <p>5、安装rvm（用于管理ruby）及最新版ruby</p>
 <div class="tag-box tag-box-v2">
-  <p>\curl -L https://get.rvm.io | bash -s stable --ruby</p>
+  <p>gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</p>
+  <p>\curl -sSL https://get.rvm.io | bash -s stable --ruby</p>
   <p>启动：source /usr/local/rvm/scripts/rvm</p>
   <p>检查安装：rvm -v</p>
   <p>查看所有ruby版本：rvm list known</p>
