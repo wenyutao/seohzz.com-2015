@@ -9,6 +9,8 @@
     <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <link rel="apple-touch-icon" href="{{ site.url }}/images/assets/selectweb-icon.jpg">
+    <meta name="apple-mobile-web-app-title" content="Select Web">
     {% stylesheet application %}
   </head> 
   <body class="header-fixed">
