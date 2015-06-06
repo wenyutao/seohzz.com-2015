@@ -14,8 +14,8 @@ assets:
   dirname: assets
   baseurl: /assets/
   sources:
-    - js
-    - css
+    - _assets/js
+    - _assets/css
   js_compressor: uglifier
   css_compressor: sass
   cache: true
@@ -24,5 +24,3 @@ assets:
 
 exclude:
   - README.md
-  - js
-  - css
