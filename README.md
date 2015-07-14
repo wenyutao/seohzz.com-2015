@@ -19,6 +19,7 @@ Select Web-2015年版
         server_name www.seohzz.com;
         index index.html;
         root /srv/seohzz.com-2015/_site;
+        error_page 404 /Error.html;
     }
 
 建立链接: ``sudo ln -s /etc/nginx/sites-available/seohzz.com /etc/nginx/sites-enabled/``
