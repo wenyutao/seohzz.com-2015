@@ -1,4 +1,4 @@
-gdky.net-2015
+seohzz.com-2015
 =============
 
 Select Web-2015年版
@@ -7,21 +7,21 @@ Select Web-2015年版
 域名绑定、301转向及nginx配置
 -----
 
-新建配置文件: ``sudo nano /etc/nginx/sites-available/gdky.net``
+新建配置文件: ``sudo nano /etc/nginx/sites-available/seohzz.com``
 
 编辑配置文件及保存: 
 
     server {
-        server_name gdky.net;
-        return 301 http://www.gdky.net$request_uri;
+        server_name seohzz.com;
+        return 301 http://www.seohzz.com$request_uri;
     }
     server {
-        server_name www.gdky.net;
+        server_name www.seohzz.com;
         index index.html;
-        root /srv/gdky.net-2015/_site;
+        root /srv/seohzz.com-2015/_site;
     }
 
-建立链接: ``sudo ln -s /etc/nginx/sites-available/gdky.net /etc/nginx/sites-enabled/``
+建立链接: ``sudo ln -s /etc/nginx/sites-available/seohzz.com /etc/nginx/sites-enabled/``
 
 重启nginx: ``sudo service nginx restart``
 
@@ -29,9 +29,9 @@ Select Web-2015年版
 下载及生成网站
 -----
 
-1. 下载网站源码: ``git clone git://github.com/zackwong/gdky.net-2015.git``
+1. 下载网站源码: ``git clone git://github.com/zackwong/seohzz.com-2015.git``
 
-2. 进入源码根目录: ``cd gdky.net-2015``
+2. 进入源码根目录: ``cd seohzz.com-2015``
 
 3. 生成网站: ``jekyll build``
 
