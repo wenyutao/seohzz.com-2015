@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse navbar-responsive-collapse">
               <ul class="nav navbar-nav">
                 <li class="{% if page.category == 'home' %}active{% endif %}"><a href="{{ site.url }}">首页</a></li>
-                <li class="{% if page.category == 'seo' %}dropdown active{% elsif page.category == 'home' or page.category == 'ec' or page.category == 'web' or page.category == 'domain' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                <li class="{% if page.category == 'seo' %}dropdown active{% else %}dropdown{% endif %}">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">SEO</a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ site.url }}/seo-theory/">SEO理论</a></li>
@@ -43,7 +43,7 @@
                     <li><a href="{{ site.url }}/baidu/">百度</a></li>
                   </ul>
                 </li>
-                <li class="{% if page.category == 'ec' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'web' or page.category == 'domain' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                <li class="{% if page.category == 'ec' %}dropdown active{% else %}dropdown{% endif %}">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">电子商务</a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ site.url }}/e-marketing/">网络营销</a></li>
@@ -51,7 +51,7 @@
                     <li><a href="{{ site.url }}/professional-ethics/">职业与道德</a></li>
                   </ul>
                 </li>
-                <li class="{% if page.category == 'web' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'domain' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                <li class="{% if page.category == 'web' %}dropdown active{% else %}dropdown{% endif %}">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Web技术</a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ site.url }}/html/">HTML语言</a></li>
@@ -60,7 +60,7 @@
                     <li><a href="{{ site.url }}/system/">计算机系统</a></li>
                   </ul>
                 </li>
-                <li class="{% if page.category == 'domain' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'web' or page.category == 'host' or page.category == 'about' %}dropdown{% endif %}">
+                <li class="{% if page.category == 'domain' %}dropdown active{% else %}dropdown{% endif %}">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">域名</a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ site.url }}/gtld/">国际域名</a></li>
@@ -69,14 +69,14 @@
                     <li><a href="{{ site.url }}/domain-registrar/">域名注册商</a></li>
                   </ul>
                 </li>
-                <li class="{% if page.category == 'host' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'web' or page.category == 'domain' or page.category == 'about' %}dropdown{% endif %}">
+                <li class="{% if page.category == 'host' %}dropdown active{% else %}dropdown{% endif %}">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">服务器</a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ site.url }}/linode/">Linode</a></li>
                     <li><a href="{{ site.url }}/bluehost/">Bluehost</a></li>
                   </ul>
                 </li>
-                <li class="{% if page.category == 'about' %}dropdown active{% elsif page.category == 'home' or page.category == 'seo' or page.category == 'ec' or page.category == 'web' or page.category == 'domain' or page.category == 'host' %}dropdown{% endif %}">
+                <li class="{% if page.category == 'about' %}dropdown active{% else %}dropdown{% endif %}">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">关于我</a>
                   <ul class="dropdown-menu">
                     <li><a href="{{ site.url }}/about/">博主简介</a></li>
