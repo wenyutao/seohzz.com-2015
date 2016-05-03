@@ -1,24 +1,22 @@
 ---
 layout: pages
 ---
-    <div class="container content">     
-        <div class="row blog-page">
-            <div class="col-md-9 md-margin-bottom-40">{% for post in site.posts %}{% if post.type-en == page.type-en %}
-                <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <img class="img-responsive" src="{{ site.url }}/images/article-thumbnail/{{ post.image }}.jpg" alt="{{ post.title }}">
-                    </div>
-                    <div class="col-md-7">
-                        <h2>{{ post.title }}</h2>
-                        <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-tags"></i> {{ post.keywords }}</li>
-                            <li><i class="fa fa-calendar"></i> {{ post.date | date:"%Y年%m月%d日" }}</li>
-                        </ul>
-                        <p>{{ post.description }}</p>
-                        <p><a class="btn-u btn-u-small" href="{{ site.url }}{{ post.url }}"><i class="fa fa-location-arrow"></i> 阅读全文</a></p>
-                    </div>    
-                </div>
-                <hr class="margin-bottom-40">{% endif %}{% endfor %}
-            </div>
-        </div>        
+<div class="container content">
+  <div class="row blog-page">
+    <div class="col-md-9 md-margin-bottom-40">{% for post in site.posts %}{% if post.type-en == page.type-en %}
+      <div class="row blog blog-medium margin-bottom-40">
+        <div class="col-md-5"><img class="img-responsive" src="{{ site.url }}/images/article-thumbnail/{{ post.image }}.jpg" alt="{{ post.title }}"></div>
+        <div class="col-md-7">
+          <h2>{{ post.title }}</h2>
+          <ul class="list-unstyled list-inline blog-info">
+            <li><i class="fa fa-tags"></i> {{ post.keywords }}</li>
+            <li><i class="fa fa-calendar"></i> {{ post.date | date:"%Y年%m月%d日" }}</li>
+          </ul>
+          <p>{{ post.description }}</p>
+          <p><a class="btn-u btn-u-small" href="{{ site.url }}{{ post.url }}"><i class="fa fa-location-arrow"></i> 阅读全文</a></p>
+        </div>
+      </div>
+      <hr class="margin-bottom-40">{% endif %}{% endfor %}
     </div>
+  </div>
+</div>
