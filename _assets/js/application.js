@@ -4,3 +4,4 @@
 //= require back-to-top.js
 //= require app.js
 //= require jquery.fancybox.pack.js
+//= require popup-img.js
