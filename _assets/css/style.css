@@ -1,4 +1,4 @@
-body{ font-family: Noto Sans SC;}
+body{ font-family: Helvetica Neue;}
 /*Top Bar (login, search etc.)
 ------------------------------------*/
 .topbar {
@@ -35,7 +35,7 @@ body{ font-family: Noto Sans SC;}
 	font-size: 8px;
 	position: relative;
 	margin: 0 9px 0 5px;
-	font-family: Noto Sans SC;
+	font-family: Helvetica Neue;
 	border-right: solid 1px #bbb;
 }
 
@@ -856,7 +856,7 @@ body{ font-family: Noto Sans SC;}
 	line-height: 35px;
 	font-weight: normal;
 	margin-bottom: 12px;
-	font-family: Noto Sans SC; 	
+	font-family: Helvetica Neue; 	
 }
 
 .purchase .btn-buy {
@@ -3031,7 +3031,7 @@ body.dark .tp-banner-container .btn-u.btn-brd.btn-u-light {
 	font-weight: 400;
 	line-height: 60px;
 	text-transform: uppercase;
-	font-family: Noto Sans SC;
+	font-family: Helvetica Neue;
 }
 
 .revolution-ch2 {
@@ -3042,7 +3042,7 @@ body.dark .tp-banner-container .btn-u.btn-brd.btn-u-light {
 	position: relative;
 	text-align: center;
 	font-weight: normal;
-	font-family: Noto Sans SC;
+	font-family: Helvetica Neue;
 }
 
 .revolution-ch2:after {
