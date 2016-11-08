@@ -25,10 +25,6 @@ body{ font-family: 'Microsoft YaHei';}
 	text-transform: uppercase;
 }
 
-.topbar ul.loginbar li i.fa { 
-	color: #bbb;
-}
-
 .topbar ul.loginbar li.topbar-devider { 
 	top: -1px;
 	padding: 0;
