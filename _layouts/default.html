@@ -86,12 +86,8 @@
                 </li>                    
                 <li class="dropdown">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">快捷通道</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="{{ site.url }}/baidu/baidu-seo-guide.html">百度搜索引擎优化指南V2.0</a></li>
-                    <li><a href="{{ site.url }}/google/google-seo-guide.html">Google搜索引擎优化初学者指南</a></li>
-                    <li><a href="{{ site.url }}/linode/linode-setup.html">Linode设置</a></li>
-                    <li><a href="{{ site.url }}/linode/ubuntu-pptp-setup.html">Ubuntu安装pptp</a></li>
-                    <li><a href="{{ site.url }}/domain-knowledge/domain-transfer-complaints.html">域名转移投诉</a></li>
+                  <ul class="dropdown-menu">{% for post in site.posts %}{% if post.shortcut-channel == 'shortcut-channel' %}
+                    <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>{% endif %}{% endfor %}
                   </ul>
                 </li>   
               </ul>
