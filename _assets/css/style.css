@@ -691,7 +691,7 @@ body{ font-family: 'Microsoft YaHei';}
 @media (max-width: 992px) {
 	/*Header*/
 	.header-fixed .header {
-		height: 118px;
+		height: 88px;
 	}
 
 	.header-fixed .header.header-fixed-shrink {
@@ -2347,7 +2347,7 @@ ul.labels-demo li {
 @media (min-width: 768px) and (max-width: 998px) {
 	/*Navbar Brand*/
 	.header .navbar-brand {
-		top: 4px;
+		top: 0px;
 	}
 
   /*Search*/
