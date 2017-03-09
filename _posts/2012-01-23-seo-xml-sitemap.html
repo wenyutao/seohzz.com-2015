@@ -8,16 +8,19 @@ title: SEO中XML网站地图的制作
 keywords: SEO基础知识
 description: 本文主要在SEO角度介绍网站地图的重要性和作用，以及介绍怎样制作规范化和标准化的XML网站地图。
 ---
-<p>在SEO中网站地图的规范制作是一个非常重要的环节，规范和标准的网站能使搜索引擎更好的收录你的网站。站在SEO角度上看，网站地图分为两种，分别是HTML网站地图和XML网站地图。本文简单介绍一下XML网站的标准格式和制作规范。</p>
-<p>Googl在2005年最早提出并支持XML网站地图，次年雅虎和微软相继宣布支持XML网站地图。现在各个主要的搜索引擎都支持XML网站地图。</p>
-<p>XML网站地图实际上就是为了让搜索引擎更好地收录网站，所以只要一行列出一个网页URL就可以了。换句话说最简单的网站地图可以是一个纯文本文件。</p>
-<p>现在淡淡规划化和标准化的XML网站地图的制作技巧（如我的博客<a href="{{ site.url }}">Select Web</a>的XML网站地图<a href="{{ site.url }}/Sitemap.xml">Sitemap</a>）：</p>
-<p>XML网站地图的文件名通常是大写S的Sitemap。</p>
-<p>XML网站地图必须是utf8编码。</p>
-<p>XML网站地图的标准格式代码如下图所示：</p>
+<div style="text-indent:2em">
+  <p>在SEO中网站地图的规范制作是一个非常重要的环节，规范和标准的网站能使搜索引擎更好的收录你的网站。站在SEO角度上看，网站地图分为两种，分别是HTML网站地图和XML网站地图。本文简单介绍一下XML网站的标准格式和制作规范。</p>
+  <p>Googl在2005年最早提出并支持XML网站地图，次年雅虎和微软相继宣布支持XML网站地图。现在各个主要的搜索引擎都支持XML网站地图。</p>
+  <p>XML网站地图实际上就是为了让搜索引擎更好地收录网站，所以只要一行列出一个网页URL就可以了。换句话说最简单的网站地图可以是一个纯文本文件。</p>
+  <p>现在淡淡规划化和标准化的XML网站地图的制作技巧（如我的博客<a href="{{ site.url }}">Select Web</a>的XML网站地图<a href="{{ site.url }}/Sitemap.xml">Sitemap</a>）：</p>
+  <p>XML网站地图的文件名通常是大写S的Sitemap。</p>
+  <p>XML网站地图必须是utf8编码。</p>
+  <p>XML网站地图的标准格式代码如下图所示：</p>
+</div>
 <div class="tag-box tag-box-v2">
   <p>&lt;?xml version="1.0" encoding="utf-8"?&gt;</p>
-  <p>&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;&lt;!--声明使用的Sitemap协议版本--&gt;</p>
+  <p>&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  <p>&lt;!--声明使用的Sitemap协议版本--&gt;</p>
   <p>&lt;url&gt;</p>
   <p>&lt;loc&gt;{{ site.url }}&lt;/loc&gt;&lt;!--列出完整网页的URL--&gt;</p>
   <p>&lt;lastmod&gt;2012-01-23&lt;/lastmod&gt;&lt;!--网页最后一次更新的时间--&gt;</p>
@@ -26,5 +29,14 @@ description: 本文主要在SEO角度介绍网站地图的重要性和作用，�
   <p>&lt;/url&gt;</p>
   <p>&lt;/urlset&gt;</p>
 </div>
-<p>上面格式代码中urlset标签是用于声明文件所使用的是Sitemap协议版本，url标签是下面所列的所有网址的母标签，loc标签用于列出完整网页的URL，lastmod标签是用于表示该网页最后一次更新的时间，changefreg标签表示网页更新频率，标签值为always（一直更新）、hourly（每小时更新）、daily（每天更新）、weekly（每周更新）、monthly（每月更新）、yearly（每年更新）和never（从不更新），priority标签是表示该网页URL在整个网站的重要性，数值由0.0（最不重要）到1.0（最重要）之间。其中urlset标签、url标签和loc标签是每个规范化和标准化的XML网站地图必需存在的标签，lastmod标签、changefreg标签和priority标签是可选标签并不是每个规范化和标准化的XML网站地图都必需存在的标签。</p>
-<p>但是必须注意的是XML网站地图所声明的更新频率和网页URL的重要性都只是对搜索引擎的一个提示，同时XML网站地图所列出让搜索引擎收录的网页也都是一个提示，搜索引擎会根据自身的算法决定是否全部收录、部分收录还是都不收录。即便如此，本人还是认为在在SEO的角度上来说，无论网站规模大小都必需存在网站地图。</p>
+<div style="text-indent:2em">
+  <p>上面格式代码中：</p>
+  <p>urlset标签是用于声明文件所使用的是Sitemap协议版本；</p>
+  <p>url标签是下面所列的所有网址的母标签；</p>
+  <p>loc标签用于列出完整网页的URL；</p>
+  <p>lastmod标签是用于表示该网页最后一次更新的时间；</p>
+  <p>changefreg标签表示网页更新频率，标签值为always（一直更新）、hourly（每小时更新）、daily（每天更新）、weekly（每周更新）、monthly（每月更新）、yearly（每年更新）和never（从不更新）；</p>
+  <p>priority标签是表示该网页URL在整个网站的重要性，数值由0.0（最不重要）到1.0（最重要）之间。</p>
+  <p>其中urlset标签、url标签和loc标签是每个规范化和标准化的XML网站地图必需存在的标签，lastmod标签、changefreg标签和priority标签是可选标签并不是每个规范化和标准化的XML网站地图都必需存在的标签。</p>
+  <p>但是必须注意的是XML网站地图所声明的更新频率和网页URL的重要性都只是对搜索引擎的一个提示，同时XML网站地图所列出让搜索引擎收录的网页也都是一个提示，搜索引擎会根据自身的算法决定是否全部收录、部分收录还是都不收录。即便如此，本人还是认为在在SEO的角度上来说，无论网站规模大小都必需存在网站地图。</p>
+</div>
