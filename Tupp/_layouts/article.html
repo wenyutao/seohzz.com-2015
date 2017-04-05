@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="breadcrumbs">
+  <div class="container">
+    <h1 class="pull-left">{{ page.title }}</h1>
+    <ul class="pull-right breadcrumb">
+      <li><a href="{{ site.url }}">首页</a></li>
+      <li><a href="{{ site.url }}/{{ page.type-en }}/">{{ page.keywords }}</a></li>
+      <li class="active">{{ page.title }}</li>
+    </ul>
+  </div>
+</div>
+<div class="container content blog-page blog-item">
+  <div class="blog margin-bottom-40">
+    <h2 class="text-center"><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h2>
+    <div class="blog-post-tags text-center">
+      <ul class="list-unstyled list-inline blog-info">
+        <li><i class="fa fa-calendar"></i> {{ page.date | date:"%Y年%m月%d日" }}</li>
+        <li><i class="fa fa-tags"></i> {{ page.keywords }}</li>
+      </ul>
+    </div>
+    {{ content }}
+  </div>
+</div>
